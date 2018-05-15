@@ -2,7 +2,7 @@
 
 This project is aimed at capturing all the basic concepts, components, features and functionality that the Angular framework has to offer.
 It aims to explain in low level detail the mechanics of each core Angular featuer and hence can be used as a reference guide. 
-
+This project will be useful to anyone who wants to learn Angular (Angular 5 as of writing this)
 ## Project Generation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
