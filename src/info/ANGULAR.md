@@ -14,4 +14,21 @@ Node.js
 - Node JS is a Javascript Runtime that has npm inbuilt.
 - NPM (some refer as Node Package Manager) is a javascript package that manages dependencies within an Angular application
 
+========================================================================================================================
+Project Structure
+========================================================================================================================
 
+Folders:
+- e2e // for end to end testing
+- src // where the project lives
+- app // where the application code lives
+- assets // where the project assets live
+- node_modules // directory containing all the javascript libraries 
+
+Files:
+- index.html // the SPA file containing the <app-root> tag which is the main tag that loads the Angular application
+- angular-cli.json // configuration file for the project. Uses Webpack to compile all the css and dependencies into the index.html file
+
+========================================================================================================================
+How an Angular Application gets Loaded
+========================================================================================================================
