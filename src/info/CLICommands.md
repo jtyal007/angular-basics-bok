@@ -1,6 +1,5 @@
-========================================================================================================================
-Angular CLI Commands
-========================================================================================================================
+
+# Angular CLI Commands
 
 installling the Angular CLI
 > npm install -g @angular/cli     // the g stands for global which allows the npm command to be used anywhere

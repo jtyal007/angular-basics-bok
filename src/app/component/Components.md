@@ -1,6 +1,5 @@
-========================================================================================================================
-Components
-========================================================================================================================
+
+# Angular Components
 - Angular is based on the idea of Component-driven development
 - Components are reusable across views and each has their own tempalte, HTML code, styling, and typescript code to hold the business logic
 - Each application has an app.module which is the Root component of the entire Angular application. All the other components are added to this component.
@@ -9,17 +8,14 @@ Components
 - Because the component is essentially a typescript class, it needs to be exported to be used outside the class
 - To use a component, it needs to be registered in the AppModule
 
-========================================================================================================================
-Files in a component
-========================================================================================================================
+## Files in a component
 1. mycomp.component.css // CSS styles for the component
 2. mycomp.component.html // HTML template for the component
 3. mycomp.component.spec.ts // for testing the component
 4. mycomp.component.ts // typescript file containing the logic for the component
 
-========================================================================================================================
-How to use a component
-========================================================================================================================
+
+## How to use a component
 Components can either be created manually or automatically using the CLI command.
 
 CLI command:
