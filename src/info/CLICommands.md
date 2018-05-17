@@ -9,6 +9,7 @@ Creating a new Angular project
 
 Pull down dependencies of the project
 > npm install                       // pulls down the dependencies of the projects and puts it into the node_modules folder
+                                    // run this command when you add anything new to package.json
 
 Run and build the project
 > ng serve                          // builds the projects and deploys to local dev server to test

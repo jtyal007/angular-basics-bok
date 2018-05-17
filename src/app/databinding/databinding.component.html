@@ -1,5 +1,17 @@
-<b>Testing String Interpolation</b>
-Implicit String : {{myImplicitString}}
-Explicit String : {{myExplicitString}}
-Explicit number : {{myNumber}}
-Function returning a String : {{getStringFunction()}}
+<h1>DataBinding</h1>
+<b>1. Testing String Interpolation</b>
+<p>Implicit String : {{myImplicitString}} Explicit String : {{myExplicitString}} Explicit number : {{myNumber}} Function returning
+    a String : {{getStringFunction()}}
+</p>
+<b>2. Testing Property Binding</b>
+<p>
+    <button class="btn btn-primary" disabled="false">WithOut Property Binding</button>
+    <!-- Button without property Binding-->
+    <button class="btn btn-primary" [disabled]="myPropertyBinding">With Property Binding</button>
+    <!-- Button with property Binding, after 2secs, button enabled-->
+</p>
+<b>3. Testing Event Binding</b>
+<p>
+    <input type="text" (oninput)="updateMyEventBindingString"/>
+    The Input has been : {{myEventBindingString}}
+</p>
