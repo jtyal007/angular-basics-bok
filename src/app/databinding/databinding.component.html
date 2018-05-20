@@ -11,7 +11,16 @@
     <!-- Button with property Binding, after 2secs, button enabled-->
 </p>
 <b>3. Testing Event Binding</b>
+<p>To bind to HTML element events in Angular, put the event in circle brackets and remove the 'on' part of the event name i.e. (click) instead of onclick </p>
 <p>
-    <input type="text" (oninput)="updateMyEventBindingString"/>
-    The Input has been : {{myEventBindingString}}
+<button class="btn btn-primary" (click)="onEventBindingIncreaseNumber()">Increase Number</button> {{eventBindingNumber}}
+</p>
+<p>
+    This example shows how to use the $event to retrieve the value from the event and bind it back to a variable
+    <input type="text"  (input)="onEventBindingTextInput($event)"> {{eventBindingString}}
+</p>
+<b>4. 2-Way Binding</b>
+<p>
+<input type="text"  [(ngModel)]="twoWayBindingString" > {{twoWayBindingString}}
+<button (click)="onClickOutputString()">Output String</button> {{twoWayBindingOutputString}}
 </p>

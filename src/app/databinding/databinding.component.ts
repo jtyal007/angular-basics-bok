@@ -25,9 +25,21 @@ export class DatabindingComponent {
     }
 
     // variables to test Event Binding 
-    myEventBindingString: String = 'unchanged';
-    updateMyEventBindingString() {
-        console.log('blah');
-       this.myEventBindingString = 'changed';
+    eventBindingNumber: number = 0;
+    eventBindingString: string;
+    onEventBindingIncreaseNumber():void {
+        this.eventBindingNumber++;
     }
+    onEventBindingTextInput(event: Event): void {
+        console.log(event);  // inspect the event properties. Can retrieve the value from the HTML input
+        this.eventBindingString = (<HTMLInputElement>(event.target)).value;
+    }
+
+    // variables to test out 2-way binding
+    twoWayBindingString: String = 'default';
+    twoWayBindingOutputString: String;
+    onClickOutputString(): void {
+        this.twoWayBindingOutputString = this.twoWayBindingString;
+    }
+
 }

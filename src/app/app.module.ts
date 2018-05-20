@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms'; // import required for 2-way binding
 
 import { AppComponent } from './app.component';
 import { ComponentComponent } from './component/component.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+
 
 
 @NgModule({ // decorator - tells Angular that this is a Module
@@ -14,7 +15,7 @@ import { DatabindingComponent } from './databinding/databinding.component';
     DatabindingComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] // tells Angular which component needs to be loaded when Angular first starts 

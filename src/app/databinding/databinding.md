@@ -2,6 +2,7 @@
 # Data Binding in Angular
 
 Databinding is how the typescript/javascript code communicates with the HTML template
+
 There are 4 forms of data-binding:
 
 1. String Interpolation
@@ -24,9 +25,16 @@ i.e.
 3. Event Binding
 Allows Angular to set the value of an HTML element dynamically
 usage: <blah (event)="expression">
-When setting the event statically, it's not within brackets
+When setting the event statically, it's not within brackets and omit the on part of the keyword
+To get the values and properties of the event, use $event in the expression. i.e. (input)= "onUpdateServerName($event)"
+In the type script class, you can then use event.target.value (may require casting to HTML input) to retrieve the input value
+Note: for binding values, it's probably better to use Angular's 2-way binding
 
 4. 2-way Binding
 Allows Angular to bind the value of a form field to a javascript model. 
 If the form field is updated, then the model is automatically updated, and vice-versa.
-usage: [(ngModel)]="data"
+usage: [(ngModel)]="data", where ngModel is a 'directive'
+
+## What to bind to
+You can bind to all Properties and Events. To know what event or property and element has, use console.log(<property>) or inspect using the developer tools in the browser;
+For events, you don't bind to onclick, but only to the click (=>(click))
