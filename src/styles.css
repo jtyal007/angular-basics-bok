@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+pre {
+    display: block;
+    font-size: 87.5%;
+    color: #067ef7;
+}
+
+code {
+    font-size: 87.5%;
+    color: #067ef7;
+    word-break: break-word;
+}

@@ -1,3 +1,41 @@
+<section>
+
+  <h3>Angular Components</h3>
+  
+  <ul>
+    <li>Angular is based on the idea of Component-driven development</li>
+    <li>Components are reusable across views and each has their own tempalte, HTML code, styling, and typescript code to hold the business logic</li>
+    <li>Each application has an app.module which is the Root component of the entire Angular application. All the other components are added to this component.</li>
+    <li>Good practice to put all components under the app folder, and name the folder the same as the component</li>
+    <li>Naming of the component should be followed by the word component. i.e.e server.component.ts</li>
+    <li>Because the component is essentially a typescript class, it needs to be exported to be used outside the class</li>
+    <li>To use a component, it needs to be registered in the AppModule</li>
+  </ul>
+
+
+<h3>Files in a component</h3>
 <p>
-  component works!
+<img src='../../assets/angular_component_files.JPG' class="img-fluid" alt="Responsive image" />
+<br/>
+where, <br/>
+<code>component.component.css</code> contains the CSS styles for the component <br/>
+<code>component.component.html</code> is the HTML template for the component<br/>
+<code>component.component.spec.ts</code> is the file for unit testing the component<br/>
+<code>component.component.ts</code> is the typescript file containing the logic for the component<br/>
 </p>
+
+<h3>Usage</h3>
+<p>
+Components can either be created manually or automatically using the CLI command.
+
+CLI command: <br/>
+> <code>ng generate component component-name</code> <br/>
+or <br/>
+> <code>ng g c component-name</code> <br/>
+<span class="glyphicon glyphicon-info-sign">Note</span> Creating the component using the CLI will automatically import the component for usage in app.module.ts <br/>
+Manual:<br/>
+1. create the folder and the *.component.ts, *.component.html, *.component.css as required<br/>
+2. export the component class so it can be used externally<br/>
+3. import the component in the app.module.ts and add it to the Angular Module declarations array<br/>
+</p>
+</section>

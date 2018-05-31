@@ -1,3 +1,7 @@
-<p>
-  home works!
-</p>
+This is how you do a before each block
+<pre><code>
+  beforeEach(() => {{ '{' }}
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+</code></pre>
