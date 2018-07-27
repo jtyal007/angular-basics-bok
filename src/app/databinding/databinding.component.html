@@ -1,26 +1,99 @@
 <h1>DataBinding</h1>
-<b>1. Testing String Interpolation</b>
-<p>Implicit String : {{myImplicitString}} Explicit String : {{myExplicitString}} Explicit number : {{myNumber}} Function returning
-    a String : {{getStringFunction()}}
+<p>Databinding is how the typescript/javascript code communicates with the HTML template.
+    <br/> There are 4 forms of data-binding:</p>
+
+
+<h3>1. String Interpolation</h3>
+
+<p>Allows strings, or objects that can be implicitly converted to Strings outputted to the view.
+    <br/> usage: output the value within double curly braces in the HTML template i.e.
+    <code>{{ '{' }}{{ '{' }} myVariable {{ '}' }}{{ '}' }}</code>
+    <br/> MyVariable can be a variable, a hardcoded string, a method that returns a string, a value that can be converted to a
+    String (implicilty done by Angular).
+    <br/> For Example, a number will work because Angular will know to implicitly convert this into a String.
+    <br/>
+    <span class="fa fa-info-circle"></span>Within the double curly braces, you cannot put conditional statements.
 </p>
-<b>2. Testing Property Binding</b>
+> Usage:
+<br />
+
+<code>Server with {{ '{' }}{{ '{' }}serverID {{ '}' }}{{ '}' }} is {{ '{' }}{{ '{' }}getServerStatus(){{ '}' }}{{ '}' }} </code>
+
+<br/> > Example:
+<pre><code>
+    // variables declared in the ts file
+    myImplicitString = 'implicit string'; 
+    myExplicitString: string = 'explicit string'; 
+    myNumber: number = 10;
+
+    getStringFunction() {{ '{' }}
+        return "String returned from String Function";
+    {{ '}' }} 
+
+    // using the variables in the html template
+    Implicit String : {{ '{' }}{{ '{' }}myImplicitString{{ '}' }}{{ '}' }} 
+    Explicit String : {{ '{' }}{{ '{' }}myExplicitString{{ '}' }}{{ '}' }} 
+    Explicit number : {{ '{' }}{{ '{' }}myNumber{{ '}' }}{{ '}' }} 
+    Function returning a String : {{ '{' }}{{ '{' }}getStringFunction(){{ '}' }}{{ '}' }}
+</code></pre> > Output:
+<pre><code>
+    Implicit String : {{myImplicitString}} 
+    Explicit String : {{myExplicitString}} 
+    Explicit number : {{myNumber}}
+    Function returning a String : {{getStringFunction()}}
+</code>
+</pre>
+<h3>2. Property Binding</h3>
+<p>Allows Angular to set the value of a property on an HTML element dynamically.</p>
+
+> Usage
+<br/>
+<code>&lt;blah [property]="value"&gt;</code>
+<br/> 
+> Example:
+<pre><code>
+    //variable declared in ts file
+    myPropertyBinding: boolean = true;
+
+    // buttons used in html template with/without property binding
+    &lt;button class="btn btn-primary" disabled="false"&gt;WithOut Property Binding&lt;/button&gt; 
+    &lt;button class="btn btn-primary" [disabled]="myPropertyBinding"&gt;With Property Binding&lt;/button&gt; 
+</code></pre> > Output:
 <p>
     <button class="btn btn-primary" disabled="false">WithOut Property Binding</button>
     <!-- Button without property Binding-->
     <button class="btn btn-primary" [disabled]="myPropertyBinding">With Property Binding</button>
     <!-- Button with property Binding, after 2secs, button enabled-->
 </p>
-<b>3. Testing Event Binding</b>
-<p>To bind to HTML element events in Angular, put the event in circle brackets and remove the 'on' part of the event name i.e. (click) instead of onclick </p>
+<h3>3. Event Binding</h3>
+<p>Allows Angular to set the value of an event on an HTML element dynamically.
+    <br /> To bind to HTML element events in Angular, put the event in circle brackets and remove the 'on' part of the event name
+    i.e. (click) instead of onclick </p>
+> Usage
+<br/>
+<pre><code>&lt;blah (input)="expression"&gt;
+// Use $event to retrieve the properties of the event
+&lt;blah (input)= "onUpdateServerName($event)"&gt;
+</code>
+</pre>
+
+> Example:
+<pre><code>
+    //variable declared in ts file
+    &lt;button class="btn btn-primary" (click)="onEventBindingIncreaseNumber()"&gt;Increase Number&lt;/button&gt; {{ '{' }}{{ '{' }}eventBindingNumber{{ '}' }}{{ '}' }} 
+</code></pre>
+
+> Output:
+<br />
 <p>
-<button class="btn btn-primary" (click)="onEventBindingIncreaseNumber()">Increase Number</button> {{eventBindingNumber}}
+    <button class="btn btn-primary" (click)="onEventBindingIncreaseNumber()">Increase Number</button> {{eventBindingNumber}}
 </p>
 <p>
     This example shows how to use the $event to retrieve the value from the event and bind it back to a variable
-    <input type="text"  (input)="onEventBindingTextInput($event)"> {{eventBindingString}}
+    <input type="text" (input)="onEventBindingTextInput($event)"> {{eventBindingString}}
 </p>
 <b>4. 2-Way Binding</b>
 <p>
-<input type="text"  [(ngModel)]="twoWayBindingString" > {{twoWayBindingString}}
-<button (click)="onClickOutputString()">Output String</button> {{twoWayBindingOutputString}}
+    <input type="text" [(ngModel)]="twoWayBindingString"> {{twoWayBindingString}}
+    <button (click)="onClickOutputString()">Output String</button> {{twoWayBindingOutputString}}
 </p>
